@@ -26,7 +26,7 @@ class SleepTrackerViewModel(
         get() = _navigateToSleepQuality
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-    private val nights = database.getAllNights()
+    val nights = database.getAllNights()
     val nightsString = Transformations.map(nights) { nights ->
         formatNights(nights, application.resources)
     }
