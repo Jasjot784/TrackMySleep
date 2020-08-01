@@ -7,10 +7,14 @@
         <variable
             name="sleep"
             type="com.jasjotsingh.trackmysleep.database.SleepNight"/>
+        <variable
+            name="clickListener"
+            type="com.jasjotsingh.trackmysleep.sleeptracker.SleepNightAdapter.SleepNightListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:onClick="@{() -> clickListener.onClick(sleep)}"
         android:layout_height="wrap_content">
 
         <ImageView
